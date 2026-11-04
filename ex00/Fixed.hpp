@@ -6,14 +6,12 @@
 /*   By: MP9 <mikjimen@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 14:04:12 by MP9               #+#    #+#             */
-/*   Updated: 2026/10/27 12:51:13 by MP9              ###   ########.fr       */
+/*   Updated: 2026/11/04 13:21:27 by MP9              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
-
-#include <string>
 
 class Fixed
 {

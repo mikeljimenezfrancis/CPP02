@@ -6,14 +6,14 @@
 /*   By: MP9 <mikjimen@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 14:04:12 by MP9               #+#    #+#             */
-/*   Updated: 2026/11/04 13:41:22 by MP9              ###   ########.fr       */
+/*   Updated: 2026/11/04 14:49:25 by MP9              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
-#include <string>
+#include <iostream>
 
 class Fixed
 {
@@ -43,9 +43,9 @@ class Fixed
 		Fixed operator++(int);
 		Fixed &operator--();
 		Fixed operator--(int);
-		static Fixed min(Fixed& min);
+		static Fixed &min(Fixed &a, Fixed &b);
 		static const Fixed &min(const Fixed &a, const Fixed &b);
-		static Fixed max(Fixed& min);
+		static Fixed &max(Fixed &a, Fixed &b);
 		static const Fixed &max(const Fixed &a, const Fixed &b);
 		
 		private:

@@ -6,13 +6,14 @@
 /*   By: MP9 <mikjimen@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 14:09:04 by MP9               #+#    #+#             */
-/*   Updated: 2026/11/04 13:54:05 by MP9              ###   ########.fr       */
+/*   Updated: 2026/11/04 15:00:07 by MP9              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
 #include <cmath>
+#include <cstdint>
 
 Fixed::Fixed(void)
 {
@@ -124,7 +125,7 @@ Fixed Fixed::operator-(const Fixed &assignment) const
 Fixed Fixed::operator*(const Fixed &assignment) const
 {
 	Fixed result;
-	int64_t big = this->value * assignment.value;
+	int64_t big = static_cast<int64_t>(this->value) * assignment.value;
 	result.value = big >> fractional_bits;
 	return(result);
 }
@@ -132,8 +133,61 @@ Fixed Fixed::operator*(const Fixed &assignment) const
 Fixed Fixed::operator/(const Fixed &assignment) const
 {
 	Fixed result;
-	int64_t big = this->value << fractional_bits;
+	int64_t big = static_cast<int64_t>(this->value) << fractional_bits;
 	result.value = big / assignment.value;
 	return(result);
 }
 
+Fixed Fixed::operator++(int)
+{
+	Fixed old(*this);
+	++(*this);
+	return(old);
+}
+
+Fixed &Fixed::operator++()
+{
+	++value;
+	return(*this);	
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed old(*this);
+	--(*this);
+	return(old);
+}
+
+Fixed &Fixed::operator--()
+{
+	--value;
+	return(*this);
+}
+
+Fixed &Fixed::min(Fixed &a, Fixed &b)
+{
+	if(a > b)
+		return(b);
+	return(a);
+}
+
+Fixed &Fixed::max(Fixed &a, Fixed &b)
+{
+	if(a < b)
+		return(b);
+	return(a);
+}
+
+const Fixed &Fixed::min(const Fixed &a, const Fixed &b)
+{
+	if (a > b)
+		return(b);
+	return(a);
+}
+
+const Fixed &Fixed::max(const Fixed &a, const Fixed &b)
+{
+	if (a < b)
+		return(b);
+	return(a);
+}

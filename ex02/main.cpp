@@ -6,7 +6,7 @@
 /*   By: MP9 <mikjimen@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 14:03:46 by MP9               #+#    #+#             */
-/*   Updated: 2026/11/04 15:06:02 by MP9              ###   ########.fr       */
+/*   Updated: 2026/11/04 15:50:57 by MP9              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int main( void )
 	std::cout << ++a << std::endl;
 	std::cout << a << std::endl;
 	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
